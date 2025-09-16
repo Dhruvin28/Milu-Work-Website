@@ -48,3 +48,66 @@ h1 {
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+/* Lightbox Styles */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of everything */
+}
+
+#lightbox.hidden {
+    display: none; /* Hide by default */
+}
+
+#lightbox-img {
+    max-width: 90%; /* Limit image size within lightbox */
+    max-height: 90%;
+    object-fit: contain; /* Ensure image fits without cropping */
+    display: block; /* Remove extra space below image */
+    border: 3px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Above the image */
+}
+
+.close-button:hover,
+.nav-arrow:hover {
+    color: #ccc;
+}
+
+.nav-arrow {
+    position: absolute;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    user-select: none; /* Prevent text selection */
+    transition: background-color 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-arrow.prev-arrow {
+    left: 20px;
+}
+
+.nav-arrow.next-arrow {
+    right: 20px;
+}
